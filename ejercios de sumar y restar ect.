@@ -1,0 +1,23 @@
+using System;
+// Suma, Resta, Multiplicación, y Division |  Simple.
+namespace Gama
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double numero1, numero2, mult, div, suma, resta;
+            Console.WriteLine(" ~ Ingresa los 2 números:");
+            numero1 = double.Parse(Console.ReadLine());
+            numero2 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine($"La suma es: {suma = numero1 + numero2}");
+            Console.WriteLine($"La resta es: {resta = numero1 - numero2}");
+            Console.WriteLine($"La multiplicación es: {mult = numero1 * numero2}");
+            Console.WriteLine($"La división es: {div = numero1 / numero2}");
+        }
+
+    }
+
+}
