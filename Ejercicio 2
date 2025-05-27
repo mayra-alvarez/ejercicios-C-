@@ -1,0 +1,38 @@
+using System;
+//      Crear un programa que permita calcular el sueldo neto de un empleado, partiendo del pago por hora 
+//      y las horas trabajadas, aplicar un descuento de AFP que es 2.87% y SFS que es el 3.04%, sumar los
+//      descuentos y luego debe restarlos del sueldo bruto.
+
+
+class Program
+{
+    static void Main()
+    {
+        // Solicitar al usuario el pago por hora y las horas trabajadas
+        Console.Write("Ingrese el pago por hora: ");
+        decimal pagoPorHora = Convert.ToDecimal(Console.ReadLine());
+
+        Console.Write("Ingrese la cantidad de horas trabajadas: ");
+        decimal horasTrabajadas = Convert.ToDecimal(Console.ReadLine());
+
+        // Calcular sueldo bruto
+        decimal sueldoBruto = pagoPorHora * horasTrabajadas;
+
+        // Calcular descuentos
+        decimal afp = sueldoBruto * 0.0287m;
+        decimal sfs = sueldoBruto * 0.0304m;
+        decimal totalDescuento = afp + sfs;
+
+        // Calcular sueldo neto
+        decimal sueldoNeto = sueldoBruto - totalDescuento;
+
+        // Mostrar resultados
+        Console.WriteLine($"\nSueldo Bruto: {sueldoBruto:C}");
+        Console.WriteLine($"Descuento AFP (2.87%): {afp:C}");
+        Console.WriteLine($"Descuento SFS (3.04%): {sfs:C}");
+        Console.WriteLine($"Total Descuentos: {totalDescuento:C}");
+        Console.WriteLine($"Sueldo Neto: {sueldoNeto:C}");
+
+        Console.ReadKey();
+    }
+}
