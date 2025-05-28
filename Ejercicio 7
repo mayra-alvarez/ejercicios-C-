@@ -1,0 +1,45 @@
+using System;
+//  Crea un programa que permita introducir la edad y el sexo de una persona,
+//  y determine si puede entrar o no a una discoteca, tomando en cuneta lo siguiente.
+//  Si es hembra, entra gratis, si es varón, entra pagando, pero no pueden entrar si
+//  son menores de edad.
+
+
+namespace ControlDiscoteca
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int edad;
+            string sexo;
+
+            Console.WriteLine(" ~ Ingrese su edad: ");
+            edad = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(" ~ Ingrese su sexo (F para hembra / M para varón): ");
+            sexo = Console.ReadLine().ToUpper(); // Convertimos a mayúsculas por seguridad
+
+            if (edad < 18)
+            {
+                Console.WriteLine("No puede entrar a la discoteca porque es menor de edad.");
+            }
+            else
+            {
+                if (sexo == "F")
+                {
+                    Console.WriteLine("Puede entrar gratis a la discoteca. Bienvenida.");
+                }
+                else if (sexo == "M")
+                {
+                    Console.WriteLine("Puede entrar a la discoteca, pero debe pagar entrada.");
+                }
+                else
+                {
+                    Console.WriteLine("Sexo no válido. Use 'F' para hembra o 'M' para varón.");
+                }
+            }
+        }
+    }
+}
+
