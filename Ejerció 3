@@ -1,0 +1,39 @@
+namespace Gama
+{
+    //      Partiendo del ejercicio 1, agregar un
+    //      tercer número y modificar las
+    //      operaciones para que cada una de ellas
+    //      sea en base a esos 3 en vez de 2 y
+    //      mostrar el resultado de cada oper
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double num1, num2, num3, multi, div, suma, resta;
+
+            Console.WriteLine(" ~ Ingresa los 3 números:");
+
+            // Solicitar los tres números
+            Console.Write("Número 1: ");
+            num1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Número 2: ");
+            num2 = double.Parse(Console.ReadLine());
+
+            Console.Write("Número 3: ");
+            num3 = double.Parse(Console.ReadLine());
+
+            // Realizar operaciones
+            suma = num1 + num2 + num3;
+            resta = num1 - num2 - num3;
+            multi = num1 * num2 * num3;
+            div = num1 / num2 / num3;
+
+            // Mostrar resultados
+            Console.WriteLine($"La suma es: {suma}");
+            Console.WriteLine($"La resta es: {resta}");
+            Console.WriteLine($"La multiplicación es: {multi}");
+            Console.WriteLine($"La división es: {div}");
+        }
+    }
+}
