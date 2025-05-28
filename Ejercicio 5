@@ -1,0 +1,27 @@
+using System;
+
+//Leer la cantidad y precio de un artículo y calcular su importe,
+//mostrar el resultado en pantalla.
+
+namespace Gama5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int cantidad;
+            decimal precio, importe;
+
+            Console.Write("Ingrese la cantidad del artículo: ");
+            cantidad = int.Parse(Console.ReadLine());
+
+            Console.Write("Ingrese el precio por unidad: ");
+            precio = decimal.Parse(Console.ReadLine());
+
+            
+            importe = cantidad * precio;
+
+            Console.WriteLine($"El importe total es: {importe}");
+        }
+    }
+}
