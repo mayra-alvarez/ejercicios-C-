@@ -1,0 +1,36 @@
+using System;
+ // Crear un programa que permita introducir 2 numeros enteros y determine cual de los dos es mayor.
+namespace CompararNumeros
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            try
+            {
+                Console.Write("Ingrese el primer número: ");
+                int numero1 = int.Parse(Console.ReadLine());
+
+                Console.Write("Ingrese el segundo número: ");
+                int numero2 = int.Parse(Console.ReadLine());
+
+                if (numero1 > numero2)
+                {
+                    Console.WriteLine("El primer número es mayor que el segundo.");
+                }
+                else if (numero2 > numero1)
+                {
+                    Console.WriteLine("El segundo número es mayor que el primero.");
+                }
+                else
+                {
+                    Console.WriteLine("los dos numeros son iguales.");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Entrada inválida. Por favor, ingrese solo números enteros.");
+            }
+        }
+    }
+}
