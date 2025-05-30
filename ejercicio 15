@@ -1,0 +1,44 @@
+using System;
+Crear un programa que permita introducir 3 numeros enteros y determine cual de los dos es mayor.
+namespace Mayor
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            try
+            {
+                Console.Write("Ingrese el primer número: ");
+                int numero1 = int.Parse(Console.ReadLine());
+
+                Console.Write("Ingrese el segundo número: ");
+                int numero2 = int.Parse(Console.ReadLine());
+
+                Console.Write("Ingrese el tercer número: ");
+                int numero3 = int.Parse(Console.ReadLine());
+
+                int mayor;
+
+                if (numero1 >= numero2 && numero1 >= numero3)
+                {
+                    mayor = numero1;
+                }
+                else if (numero2 >= numero1 && numero2 >= numero3)
+                {
+                    mayor = numero2;
+                }
+                else
+                {
+                    mayor = numero3;
+                }
+
+                Console.WriteLine($"\nEl número mayor es: {mayor}");
+            }
+            catch
+            {
+                Console.WriteLine("Entrada inválida. Asegúrate de escribir solo números enteros.");
+            }
+        }
+    }
+}
+
