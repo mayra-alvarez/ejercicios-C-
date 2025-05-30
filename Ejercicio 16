@@ -1,0 +1,69 @@
+using System;
+//       Partiendo del ejercicio 8, determinar cual es el mayor, cual es el central y cuál es el menor.
+
+namespace Gama16
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write(" ~ Ingrese el 1er número entero: ");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.Clear();
+
+            Console.Write(" ~ Ingrese el 2do número entero: ");
+            int num2 = int.Parse(Console.ReadLine());
+            Console.Clear();
+
+            Console.Write(" ~ Ingrese el 3er número entero: ");
+            int num3 = int.Parse(Console.ReadLine());
+            Console.Clear();
+
+            if (num1 > num2 && num1 > num3 )
+            {
+                if (num2 > num3)
+                {
+                    Console.WriteLine($" El número mayor es: {num1}");
+                    Console.WriteLine($" El número de en medio es: {num2}");
+                    Console.WriteLine($" El numero menor es: {num3}");
+                }
+                if (num3 > num2)
+                {
+                    Console.WriteLine($" El número mayor es: {num1}");
+                    Console.WriteLine($" El número de en medio es: {num3}");
+                    Console.WriteLine($" El numero menor es: {num2}");
+                }
+            }
+            if (num2 > num3 && num2 > num1)
+            {
+                if (n1 > n3)
+                {
+                    Console.WriteLine($" El número mayor es: {num2}");
+                    Console.WriteLine($" El número de en medio es: {num1}");
+                    Console.WriteLine($" El numero menor es: {num3}");
+                }
+                if (n3 > n1)
+                {
+                    Console.WriteLine($" El número mayor es: {num2}");
+                    Console.WriteLine($" El número de en medio es: {num3}");
+                    Console.WriteLine($" El numero menor es: {num1}");
+                }
+            }
+            if (n3 > num1 && num3 > num2)
+            {
+                if (n2 > n1)
+                {
+                    Console.WriteLine($" El número mayor es: {num3}");
+                    Console.WriteLine($" El número de en medio es: {num2}");
+                    Console.WriteLine($" El numero menor es: {num1}");
+                }
+                if (n1 > n2)
+                {
+                    Console.WriteLine($" El número mayor es: {num3}");
+                    Console.WriteLine($" El número de en medio es: {num1}");
+                    Console.WriteLine($" El numero menor es: {num2}");
+                }
+            }
+        }
+    }
+}
