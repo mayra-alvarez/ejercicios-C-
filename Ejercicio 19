@@ -1,0 +1,38 @@
+using System;
+//      Crear un programa que introduzca el sueldo de un empleado y aplicar un incentivo 
+//      si tiene hijos y aplicar 500 por cada hijo que tenga. Mostrar en pantalla el sueldo,
+//      numero de hijos y el incentivo correspondiente, siempre y cuando tenga hijo
+class Programaniños
+{
+    static void Main()
+    {
+        // Solicitar sueldo del empleado
+        Console.Write("Ingrese el sueldo del empleado: ");
+        if (!decimal.TryParse(Console.ReadLine(), out decimal sueldo))
+        {
+            Console.WriteLine("Entrada de sueldo inválida.");
+            return;
+        }
+
+        // Solicitar número de hijos
+        Console.Write("Ingrese la cantidad de hijos: ");
+        if (!int.TryParse(Console.ReadLine(), out int hijos) || hijos < 0)
+        {
+            Console.WriteLine("Entrada de número de hijos inválida.");
+            return;
+        }
+
+        // Calcular incentivo
+        decimal incentivo = 0;
+        if (hijos > 0)
+        {
+            incentivo = hijos * 500m;
+        }
+
+        // Mostrar resultados
+        Console.WriteLine("---- Detalles del Empleado ----");
+        Console.WriteLine("Sueldo: " + sueldo.ToString("C"));
+        Console.WriteLine("Número de hijos: " + hijos);
+        Console.WriteLine("Incentivo: " + (hijos > 0 ? incentivo.ToString("C") : "N/A"));
+    }
+}
