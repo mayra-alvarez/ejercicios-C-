@@ -1,0 +1,81 @@
+using System;
+
+//      Crear un programa que permita calcular el ISR de un empleado, partiendo del
+//      sueldo de este. Para ello, debe investigar como se realiza el calculo del ISR de este país,
+//      también debe investigar la escala impositiva en el sitio web de la DGII, dicha escala es
+//      correspondiente a este año en curso. Si el sueldo no aplica para descuento de ISR,
+//      mostrar en esa sección un mensaje que diga “No Aplica” o “N/A”. mostrar en pantalla
+//      el sueldo, el descuento de AFP y SFS, el ISR y el sueldo neto.
+
+// ​Según DGII.
+//Escala anual	                                    Tasa
+//Rentas hasta RD$416,220.00	                    Exento
+//Rentas desde RD$416,220.01 hasta RD$624,329.00	15% del excedente de RD$416,220.01
+//Rentas desde RD$624,329.01 hasta RD$867,123.00	RD$31,216.00 más el 20% del excedente de RD$624,329.01
+//Rentas desde RD$867,123.01 en adelante	        RD$79,776.00 más el 25% del excedente de RD$867,123.01
+
+class sueldobruto
+{
+    static void Main()
+    {
+        // Entrada del sueldo del empleado
+        Console.Write("Ingrese el sueldo bruto mensual del empleado: RD$ ");
+        double sueldoBruto = double.Parse(Console.ReadLine());
+
+        // Deducción de AFP y SFS (por ejemplo, 2.87% para AFP y 3.04% para SFS)
+        double afp = sueldoBruto * 0.0287;
+        double sfs = sueldoBruto * 0.0304;
+
+        // Calcular el ISR
+        double isr = CalcularISR(sueldoBruto);
+
+
+        double sueldoNeto = sueldoBruto - afp - sfs - isr;
+
+       
+        Console.WriteLine("\nResumen de cálculo:");
+        Console.WriteLine($"Sueldo bruto: RD$ {sueldoBruto}");
+        Console.WriteLine($"Descuento AFP: RD$ {afp}");
+        Console.WriteLine($"Descuento SFS: RD$ {sfs}");
+
+        // Mostrar el ISR o mensaje "No Aplica"
+        if (isr == 0)
+        {
+            Console.WriteLine("ISR: N/A");
+        }
+        else
+        {
+            Console.WriteLine($"ISR: RD$ {isr}");
+        }
+
+        Console.WriteLine($"Sueldo neto: RD$ {sueldoNeto}");
+    }
+
+    static double CalcularISR(double sueldoBruto)
+    {
+        double isr = 0;
+
+        if (sueldoBruto <= 416220)
+        {
+            // Exento de ISR
+            isr = 0;
+        }
+        else if (sueldoBruto <= 624329)
+        {
+            // 15% del excedente de RD$416,220.01
+            isr = (sueldoBruto - 416220) * 0.15;
+        }
+        else if (sueldoBruto <= 867123)
+        {
+            // RD$31,216 más el 20% del excedente de RD$624,329.01
+            isr = 31216 + (sueldoBruto - 624329) * 0.20;
+        }
+        else
+        {
+            // RD$79,776 más el 25% del excedente de RD$867,123.01
+            isr = 79776 + (sueldoBruto - 867123) * 0.25;
+        }
+
+        return isr;
+    }
+}
