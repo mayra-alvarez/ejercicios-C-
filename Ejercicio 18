@@ -1,0 +1,48 @@
+using System;
+
+
+//    Crear un programa que permita determinar si le corresponde incentivos a un empleado,
+//    tomando en cuenta la producción semanal que se realiza desde el lunes hasta el 
+//    viernes, cada día se debe registrar la producción y obtener el promedio de esta,
+//    si el promedio es mayor o igual a 20,000 unidades, le corresponde un incentivo 
+//    de 3,000 pesos, de lo contrario, colocar un mensaje que indica “N/A”. Mostrar
+//    en pantalla el total e la producción de la semana, el promedio de la producción 
+//    y el incentivo que corresponde.
+class Program
+{
+    static void Main()
+    {
+        double[] produccionDiaria = new double[5];
+        string[] dias = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes" };
+        double sumaProduccion = 0;
+
+        // Entrada de la producción diaria
+        for (int i = 0; i < 5; i++)
+        {
+            Console.Write($"Ingrese la producción del día {dias[i]}: ");
+            produccionDiaria[i] = double.Parse(Console.ReadLine());
+            sumaProduccion += produccionDiaria[i];
+        }
+
+        // Cálculo del promedio
+        double promedio = sumaProduccion / 5;
+
+        // Determinar incentivo
+        string incentivo;
+        if (promedio >= 20000)
+        {
+            incentivo = "RD$ 3,000.00";
+        }
+        else
+        {
+            incentivo = "N/A";
+        }
+
+        // Mostrar resultados
+        Console.WriteLine("\nResumen semanal:");
+        Console.WriteLine($"Total de producción: {sumaProduccion} unidades");
+        Console.WriteLine($"Promedio de producción: {promedio} unidades");
+        Console.WriteLine($"Incentivo: {incentivo}");
+    }
+}
+
